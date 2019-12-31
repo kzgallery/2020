@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2020</title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://vr-ugar.github.io/portals/portals.js"></script>
+	<script src="https://vr-ugar.github.io/portals/aim.js"></script>
+	<script src="https://vr-ugar.github.io/portals/a-portal.js"></script>
+  </head>
+  
+  <body>
+    <a-scene background="color: orange" loading-screen="dotsColor: orange; backgroundColor: black">
+      <a-assets>
+		  <img id="1" src="assets/Jingle_1.jpg">
+	      <img id="2" src="assets/Jingle_2.jpg">
+	      <img id="3" src="assets/Jingle_3.jpg">
+	      <img id="4" src="assets/Jingle_4.jpg">
+	      <img id="5" src="assets/Jingle_5.jpg">
+	      
+          <audio id="sound" src="assets/Jingle.mp3" preload="auto" loop="true"></audio>
+      </a-assets>
+
+      <a-camera position="0 0 0" wasd-controls="enabled: false">
+		<a-cursor visible="true" color="red"></a-cursor>
+	  	
+	  	<!-- comment out the next line when done -->
+	  	<!-- a-entity position="0 0 -10" aim --> 
+
+      <a-sound src="#sound" autoplay="true" loop="true" positional="false" position="0 2 -1"></a-sound>
+      </a-camera>
+
+		<a-entity id="loc_1" visible="true">
+			<a-sky material="src: #1"></a-sky>
+
+			<a-portal
+				to="loc_2"
+				src="#2"
+				position="-9.35 0.38 -3.53"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_3"
+				src="#3"
+				position="-7.81 5.5 2.95"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_4"
+				src="#4"
+				position="-5.45 6.89 -4.78"
+				>
+			</a-portal>
+
+		</a-entity>
+
+
+		<a-entity id="loc_2" visible="false">
+			<a-sky material="src: #2"></a-sky>
+
+			<a-portal
+				to="loc_1"
+				src="#1"
+				position="-9.64 0.6 2.58"
+				>
+			</a-portal>
+
+			<a-portal
+				to="loc_3"
+				src="#3"
+				position="-6.58 5.36 -5.29"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_4"
+				src="#4"
+				position="-3.66 7.31 5.76"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_5"
+				src="#5"
+				position="1.04 9.68 -2.3"
+				>
+			</a-portal>
+
+		</a-entity>
+
+
+		<a-entity id="loc_3" visible="false">
+			<a-sky material="src: #3"></a-sky>
+
+			<a-portal
+				to="loc_1"
+				src="#1"
+				position="-7.76 -2.76 -5.67"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_2"
+				src="#2"
+				position="-7.91 -3.45 5.06"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_5"
+				src="#5"
+				position="-0.15 9.67 2.55"
+				>
+			</a-portal>
+			
+		</a-entity>
+
+
+		<a-entity id="loc_4" visible="false">
+			<a-sky material="src: #4"></a-sky>
+
+			<a-portal
+				to="loc_1"
+				src="#1"
+				position="-5.77 -4.02 7.11"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_2"
+				src="#2"
+				position="-6.08 -3.3 -7.22"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_5"
+				src="#5"
+				position="-3.21 6.96 -6.42"
+				>
+			</a-portal>
+
+		</a-entity>
+
+
+		<a-entity id="loc_5" visible="false">
+			<a-sky material="src: #5"></a-sky>
+
+			<a-portal
+				to="loc_1"
+				src="#1"
+				position="-7.48 -6.4 1.77"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_2"
+				src="#2"
+				position="-0.35 -7.66 6.42"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_3"
+				src="#3"
+				position="-4.58 -8.88 0.3"
+				>
+			</a-portal>
+
+		</a-entity>
+    </a-scene>
+  </body>
+</html>
